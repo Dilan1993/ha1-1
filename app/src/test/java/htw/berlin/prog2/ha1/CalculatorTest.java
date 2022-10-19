@@ -44,7 +44,22 @@ class CalculatorTest {
 
     //Teilaufgabe 1: Schreiben Sie einen neuen zusätzlichen Test,
     // der eine bisher nicht getestete Funktionalität abdeckt, die bereits funktioniert und der daher direkt grün wird.
+    @Test
+    @DisplayName("should display result after subtracting two numbers")
+    void testSubstraction() {
+        Calculator calc = new Calculator();
 
+        calc.pressDigitKey(6);
+        calc.pressBinaryOperationKey("-");
+        calc.pressDigitKey(4);
+        calc.pressEqualsKey();
+
+        String expected = "2";
+        String actual = calc.readScreen();
+
+        assertEquals(expected,actual);
+
+    }
     @Test
     @DisplayName("Test")
     void testSquareZero() {
@@ -57,6 +72,7 @@ class CalculatorTest {
         String actual = calc.readScreen();
         assertEquals(expected, actual);
 }
+//Teilaufgabe 2
 }
 
 
