@@ -72,7 +72,17 @@ class CalculatorTest {
         String actual = calc.readScreen();
         assertEquals(expected, actual);
 }
-//Teilaufgabe 2
+//zweiter roter Test
+@Test
+@DisplayName("Display 3. not 3.0")
+void testSquereroot() {
+    Calculator calc = new Calculator();
+    calc.pressDigitKey(9);
+    calc.pressUnaryOperationKey("√");
+    String expected = "3";
+    String actual = calc.readScreen();
+    assertEquals(expected, actual);
+}
 }
 
 
